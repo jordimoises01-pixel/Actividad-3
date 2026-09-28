@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Componente Visual - NotiToast.js</title>
+    <link rel="stylesheet" href="css/componentes.css">
+</head>
+<body>
+
+    <div class="demo-container">
+        <h1>NotiToast.js </h1>
+        <p>Haz clic en los botones para probar la notificación emergente:</p>
+
+        <div class="button-grid">
+            <button class="btn btn-success" id="btnExito">Éxito</button>
+            <button class="btn btn-error" id="btnError">Error</button>
+            <button class="btn btn-warning" id="btnWarning">Advertencia</button>
+            <button class="btn btn-info" id="btnInfo">Información</button>
+        </div>
+    </div>
+
+    <script src="js/componentes.js"></script>
+
+    <script>
+        document.getElementById('btnExito').addEventListener('click', function() {
+            Toast.show({ title: '¡Guardado Exitoso!', message: 'Los datos se guardaron correctamente.', type: 'success' });
+        });
+
+        document.getElementById('btnError').addEventListener('click', function() {
+            Toast.show({ title: 'Error de Red', message: 'No se pudo conectar con el servidor.', type: 'error' });
+        });
+
+        document.getElementById('btnWarning').addEventListener('click', function() {
+            Toast.show({ title: 'Capacidad Al 90%', message: 'Tu espacio está por llenarse.', type: 'warning' });
+        });
+
+        document.getElementById('btnInfo').addEventListener('click', function() {
+            Toast.show({ title: 'Nueva Versión', message: 'Hay una actualización disponible.', type: 'info' });
+        });
+    </script>
+</body>
+</html>
